@@ -48,15 +48,18 @@ def test_find_pets_by_status(pet):
     assert isinstance(pets, list)
     assert len(pets) > 0
 
+
 def test_find_pets_by_tags(pet):
     response = pet.find_pets_by_tags(["tag1", "tag2"])
     assert response.status_code == 200
     pets = response.json()
     assert isinstance(pets, list)
 
+
 def test_update_pet_with_form(pet):
-    response = pet.update_pet_with_form(1, name="UpdatedName", status="sold")
+    response = pet.update_pet_with_form(111, name="UpdatedName", status="sold")
     assert response.status_code == 200
+
 
 def test_upload_image(pet):
     with tempfile.NamedTemporaryFile(suffix=".jpg") as tmp_file:

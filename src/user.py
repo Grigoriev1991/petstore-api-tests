@@ -2,6 +2,7 @@ from src.api_client import ApiClient
 
 
 class User:
+
     def __init__(self, api_client: ApiClient):
         self.api_client = api_client
 

@@ -15,10 +15,12 @@ def test_create_user(user):
     response = user.create_user(new_user)
     assert response.status_code == 200
 
+
 def test_get_user_by_username(user):
     response = user.get_user_by_username("testuser")
     assert response.status_code == 200
     assert response.json()["username"] == "testuser"
+
 
 def test_update_user(user):
     updated_user = {
@@ -34,17 +36,21 @@ def test_update_user(user):
     response = user.update_user("testuser", updated_user)
     assert response.status_code == 200
 
+
 def test_delete_user(user):
     response = user.delete_user("testuser")
     assert response.status_code == 200
+
 
 def test_login_user(user):
     response = user.login_user("testuser", "password")
     assert response.status_code == 200
 
+
 def test_logout_user(user):
     response = user.logout_user()
     assert response.status_code == 200
+
 
 def test_create_users_with_array(user):
     new_users = [
@@ -71,6 +77,7 @@ def test_create_users_with_array(user):
     ]
     response = user.create_users_with_array(new_users)
     assert response.status_code == 200
+
 
 def test_create_users_with_list(user):
     new_users = [
